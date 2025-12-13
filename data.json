@@ -1,0 +1,1417 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-05-25T16:14:57.190Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Rachel Gillig",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-05-25T16:17:07.123Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "One Dark Window",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-05-25T16:18:21.226Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Two Twisted Crowns",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-05-25T16:20:16.595Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "T. Kingfisher",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-05-25T16:21:17.875Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Nettle & Bone",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-05-25T16:22:16.640Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "What Moves the Dead",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-05-25T19:22:32.196Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jane Austen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-05-25T19:23:48.746Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Pride and Prejudice",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-05-25T19:24:41.705Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Sense and Sensibility",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-05-25T19:25:52.074Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Mihail Drumeș",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-05-25T19:26:49.175Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Invitație la vals (Invitation to the Waltz)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-05-25T19:27:51.898Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Scrisoare de dragoste (Love Letter)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-05-25T19:41:41.095Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Sebi28 - One Dark Window (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-05-25T19:42:04.081Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Sebi28 - One Dark Window (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-05-25T19:42:27.072Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Sebi28 - Nettle & Bone (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-05-25T19:42:46.838Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Sebi28 - Nettle & Bone (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-05-25T19:43:41.432Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Sebi28 - Pride and Prejudice (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-05-25T19:46:13.511Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Carmen02 - Pride and Prejudice (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-05-25T19:46:34.561Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "Carmen02 - Invitație la vals (Invitation to the Waltz) (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-05-25T19:47:00.184Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "Carmen02 - Invitație la vals (Invitation to the Waltz) (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add author",
+    "content_type": 7,
+    "codename": "add_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change author",
+    "content_type": 7,
+    "codename": "change_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete author",
+    "content_type": 7,
+    "codename": "delete_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view author",
+    "content_type": 7,
+    "codename": "view_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add book",
+    "content_type": 8,
+    "codename": "add_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change book",
+    "content_type": 8,
+    "codename": "change_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete book",
+    "content_type": 8,
+    "codename": "delete_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view book",
+    "content_type": 8,
+    "codename": "view_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 9,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 9,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 9,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view profile",
+    "content_type": 9,
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add review",
+    "content_type": 10,
+    "codename": "add_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change review",
+    "content_type": 10,
+    "codename": "change_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete review",
+    "content_type": 10,
+    "codename": "delete_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view review",
+    "content_type": 10,
+    "codename": "view_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add review vote",
+    "content_type": 11,
+    "codename": "add_reviewvote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change review vote",
+    "content_type": 11,
+    "codename": "change_reviewvote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete review vote",
+    "content_type": 11,
+    "codename": "delete_reviewvote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view review vote",
+    "content_type": 11,
+    "codename": "view_reviewvote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add next reading status",
+    "content_type": 12,
+    "codename": "add_nextreadingstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change next reading status",
+    "content_type": 12,
+    "codename": "change_nextreadingstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete next reading status",
+    "content_type": 12,
+    "codename": "delete_nextreadingstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view next reading status",
+    "content_type": 12,
+    "codename": "view_nextreadingstatus"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$9nYEzERRFTbBwWljIdUaPK$XzSB8VXNvMbgYS2CDOczGNtUP1iz2sDhZPpCcTDlNsU=",
+    "last_login": "2025-12-13T11:26:42.322Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-25T16:05:32.056Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$hAkSYRPZ5anlWuzs0Mflsw$nymVL0Ojv+co79/6dfQ5Ntwnv+P1/VoA53+G/Y80w4c=",
+    "last_login": "2025-05-25T19:17:13.436Z",
+    "is_superuser": false,
+    "username": "Sebi28",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-25T18:33:45.213Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$1IHAraVjUp8bPyWBQBdmov$oPiKouYnASzW43sDk0RUWofVjjDIQUSERkd6xfDwFLo=",
+    "last_login": "2025-05-27T06:00:11.115Z",
+    "is_superuser": false,
+    "username": "Carmen02",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-25T19:45:19.496Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$6ReNvPEn6eyEXIT5vtUxkj$yiVafJ0o8zVGRCKf0wWCWKzU2J2wTg5Iljj6hav1OZM=",
+    "last_login": "2025-05-25T23:11:20.484Z",
+    "is_superuser": false,
+    "username": "Flori4",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-25T21:08:43.343Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "library",
+    "model": "author"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "library",
+    "model": "book"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "library",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "library",
+    "model": "review"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "library",
+    "model": "reviewvote"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "library",
+    "model": "nextreadingstatus"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9chshpcrm0xj17dko9wqdg7ed5p9ge1j",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSED5VFcuvcbyDAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJUxZnocTpd0tID247yHdst1nS3NZlSnJX5EG7vM6Zn5fD_Tuo2Ou3tsqNDoKCEqhozyakzB68Nly80QgchoLkUCUAw5RHTdqyxcFkLszi_QHWCDhg:1vUNlq:Q5zYk3RFjuar3X0C37UMFoV77H6Y68p4CcHrQermgmQ",
+    "expire_date": "2025-12-27T11:26:42.330Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "w97h1hie27rju6i77kg1zzdzq3svsirj",
+  "fields": {
+    "session_data": ".eJxVjDEOAiEQRe9CbQhCYAZLe89ABhhk1UCy7FbGuxuSLbT9773_FoH2rYZ98BqWLC7CiNPvFik9uU2QH9TuXabetnWJciryoEPeeubX9XD_DiqNOmsqxrO3OeJZg0IGYhsBgQFIW4fe2qzQupIYStTolHJgisFcGGMRny_oQzgI:1uJnMB:7JJfTMR8wxG4jhRdariyNQubtbJAFplabdZkZxvAiIc",
+    "expire_date": "2025-06-10T06:00:11.127Z"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 1,
+  "fields": {
+    "name": "Rachel Gillig",
+    "bio": "Rachel Gillig is an American fantasy author known for her lyrical writing style and rich, immersive world-building. She made her debut with One Dark Window, a gothic fantasy novel that quickly gained popularity for its unique blend of dark magic, court intrigue, and romantic tension. Gillig holds a Master’s degree in English Literature and is praised for weaving psychological depth and folklore into her storytelling. When not writing, she enjoys exploring myths, sipping tea, and walking in nature.",
+    "photo_url": "https://i0.wp.com/rachelgillig.com/wp-content/uploads/2024/07/afterlightimage-4-edited.jpeg?ssl=1"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 2,
+  "fields": {
+    "name": "T. Kingfisher",
+    "bio": "T. Kingfisher is the pen name of Ursula Vernon, an acclaimed American author known for her darkly whimsical fantasy and horror novels. Writing as Kingfisher, she specializes in adult fantasy that mixes folklore, humor, and horror with deeply human characters. Her works often feature strong female leads, strange magic, and offbeat creatures. She is a multiple Hugo and Nebula Award winner, praised for her originality and emotional resonance.",
+    "photo_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTxs0uHnd_a5bV_VjOsViqAEbCEPN04pbUZ0S_-LGCCkM7EeXjYxO5GxOo_7AqhWCc6Whv0eoVTQCjmU-YSuudXiA"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 3,
+  "fields": {
+    "name": "Jane Austen",
+    "bio": "Jane Austen (1775–1817) was an English novelist known for her keen social commentary and enduring romantic fiction. Her works explore themes of class, marriage, morality, and the role of women in 18th and 19th-century England. Austen's novels are celebrated for their wit, memorable characters, and sharply observed narratives. Though she received modest recognition in her lifetime, she is now considered one of the greatest literary figures in English literature.",
+    "photo_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTumFtyTl8aU7YueE9RG11lj1GDxJXf4BjLm-4Iznkm5-7hyQv3foGINzhUZkuDNrPSSwXTyHJNzmIWTjYFImKGuA"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 4,
+  "fields": {
+    "name": "Mihail Drumeș",
+    "bio": "Mihail Drumeș (1901–1982) was a Romanian novelist and playwright, known for his accessible, emotionally charged narratives and romantic themes. He gained popularity in the interwar period for his novels that blended melodrama, moral dilemmas, and dramatic tension, often centered on love, sacrifice, and the human condition. His writing style is clear and direct, making him a beloved figure in Romanian literature, particularly among young readers in the mid-20th century.",
+    "photo_url": "https://jurnalul.ro/thumbs/big3/2011/07/10/mihail-drumes-iubit-si-contestat-cu-aceeasi-patima-486926.webp"
+  }
+},
+{
+  "model": "library.book",
+  "pk": 1,
+  "fields": {
+    "title": "One Dark Window",
+    "author": 1,
+    "genre": "Dark Fantasy, Gothic Romance",
+    "description": "One Dark Window is the first book in a gothic fantasy duology by Rachel Gillig. The story follows Elspeth Spindle, a young woman cursed with a forbidden magic that allows her to hear a monstrous voice in her head. When her kingdom’s tyrannical system threatens her and those she loves, Elspeth must navigate a world of secrets, prophecy, and dangerous magic. The novel blends dark fairytale vibes with psychological tension and a slow-burn romance.",
+    "cover_url": "https://cdn.dc5.ro/img-prod/1882063041-0.jpeg",
+    "average_rating": 4.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 2,
+  "fields": {
+    "title": "Two Twisted Crowns",
+    "author": 1,
+    "genre": "Dark Fantasy, Romantic Fantasy",
+    "description": "Two Twisted Crowns is the sequel and conclusion to the Shepherd King duology. Picking up after the events of One Dark Window, this novel explores the rising tensions between magic, prophecy, and power. Elspeth and Ravyn must face even greater threats as ancient forces awaken, and the fate of their kingdom hangs in the balance. Full of heart-pounding action and emotional revelations, this finale ties together themes of sacrifice, identity, and love.",
+    "cover_url": "https://cdn.dc5.ro/img-prod/2358901670-0.jpeg",
+    "average_rating": 4.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 3,
+  "fields": {
+    "title": "Nettle & Bone",
+    "author": 2,
+    "genre": "Fantasy, Fairytale, Dark Adventure",
+    "description": "Nettle & Bone is a standalone fantasy novel that reads like a grim fairytale. It follows Marra, a quiet princess who has lived her life in a convent, as she sets out on an impossible quest to rescue her sister from an abusive prince. Along the way, she assembles a quirky band of allies—including a dust-wife, a demon-possessed chicken, and a disgraced knight. It’s a story of quiet defiance, dark magic, and fierce love.",
+    "cover_url": "https://cdn.dc5.ro/img-prod/2087580418-0.jpeg",
+    "average_rating": 5.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 4,
+  "fields": {
+    "title": "What Moves the Dead",
+    "author": 2,
+    "genre": "Gothic Horror, Mystery, Novella",
+    "description": "What Moves the Dead is a gothic horror novella inspired by Edgar Allan Poe’s The Fall of the House of Usher. The story follows retired soldier Alex Easton, who travels to a decaying manor to aid a dying friend. What they find is a place rotting with fungal infestation, strange wildlife, and haunting secrets. Kingfisher blends body horror, mystery, and folklore in this chilling, atmospheric tale.",
+    "cover_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632936332l/58724626.jpg",
+    "average_rating": 4.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 5,
+  "fields": {
+    "title": "Pride and Prejudice",
+    "author": 3,
+    "genre": "Classic, Romance, Social Commentary",
+    "description": "Pride and Prejudice is Jane Austen’s most famous novel, first published in 1813. It tells the story of Elizabeth Bennet, a spirited young woman navigating issues of manners, morality, and marriage in the British gentry. When she meets the proud Mr. Darcy, their clashing personalities lead to misunderstandings, personal growth, and ultimately, love. The novel is known for its sharp dialogue, wit, and exploration of societal expectations.",
+    "cover_url": "https://readaloudrevival.com/wp-content/uploads/2016/05/Pride-and-Prejudice.png.webp",
+    "average_rating": 4.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 6,
+  "fields": {
+    "title": "Sense and Sensibility",
+    "author": 3,
+    "genre": "Classic, Romance, Family Drama",
+    "description": "Sense and Sensibility, published in 1811, was Jane Austen’s first novel. It follows the contrasting lives of the Dashwood sisters—Elinor and Marianne—as they face love, loss, and societal pressures. Elinor represents sense (logic and restraint), while Marianne represents sensibility (emotion and spontaneity). The novel critiques the limited roles available to women and emphasizes the importance of balance between emotion and reason.",
+    "cover_url": "https://m.media-amazon.com/images/M/MV5BNmM4MjcxOTgtZmMyNS00NGY4LThjMjEtYzRjMGY5NzNjYWZjXkEyXkFqcGc@._V1_.jpg",
+    "average_rating": 3.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 7,
+  "fields": {
+    "title": "Invitație la vals (Invitation to the Waltz)",
+    "author": 4,
+    "genre": "Romance, Tragedy, Bildungsroman",
+    "description": "Invitație la vals is Mihail Drumeș’s most famous novel, first published in 1939. It tells the tragic love story between Tudor and Mica, two university students whose relationship is marked by passion, pride, and misunderstandings. Through emotional highs and lows, the novel explores themes of youth, emotional immaturity, and the consequences of unspoken truths. It remains a classic of Romanian romantic literature.",
+    "cover_url": "https://static.editura-art.ro/image/14013/set-mihail-drumes-3-volume-cover_big_slide_new.jpg",
+    "average_rating": 5.0
+  }
+},
+{
+  "model": "library.book",
+  "pk": 8,
+  "fields": {
+    "title": "Scrisoare de dragoste (Love Letter)",
+    "author": 4,
+    "genre": "Romance, Drama",
+    "description": "Scrisoare de dragoste is another emotional and dramatic novel by Mihail Drumeș. It revolves around a heartfelt letter that unveils a story of unfulfilled love and lost time. Known for its introspective tone and emotional intensity, the book offers a poignant reflection on missed opportunities and the enduring power of memory in love.",
+    "cover_url": "https://cdn4.libris.ro/img/pozeprod/37643/37642689-1.jpg",
+    "average_rating": 5.0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "book": 1,
+    "rating": 4,
+    "review_text": "A dark, lyrical fantasy that had me hooked from the first page. The world-building is rich, the magic system is unique, and Elspeth is such a compelling protagonist. Can’t wait to dive into the sequel!",
+    "created_at": "2025-05-25T19:41:41.093Z",
+    "like_count": 0,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "book": 1,
+    "rating": 5,
+    "review_text": "This book reads like a gothic fairytale, and I loved every minute of it. The Shadows were eerie in the best way, and the romance had just the right amount of tension.",
+    "created_at": "2025-05-25T19:42:04.078Z",
+    "like_count": 1,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "book": 3,
+    "rating": 5,
+    "review_text": "A strange, lovely, and deeply satisfying fantasy quest. I never thought I’d love a book with a demon-possessed chicken, but here we are.",
+    "created_at": "2025-05-25T19:42:27.069Z",
+    "like_count": 1,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "book": 3,
+    "rating": 4,
+    "review_text": "This is the fairytale I never knew I needed—dark, quirky, and full of heart. T. Kingfisher has such a distinctive voice, and I laughed and cried through it all.",
+    "created_at": "2025-05-25T19:42:46.835Z",
+    "like_count": 1,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "book": 5,
+    "rating": 5,
+    "review_text": "A timeless masterpiece. Elizabeth Bennet and Mr. Darcy are literary icons for a reason. No matter how many times I read it, it never loses its charm.",
+    "created_at": "2025-05-25T19:43:41.430Z",
+    "like_count": 1,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "book": 5,
+    "rating": 4,
+    "review_text": "Witty, sharp, and beautifully written. Jane Austen's critique of society still feels relevant today. A must-read for any literature lover.",
+    "created_at": "2025-05-25T19:46:13.508Z",
+    "like_count": 0,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 7,
+  "fields": {
+    "user": 3,
+    "book": 7,
+    "rating": 5,
+    "review_text": "A heartbreaking love story that still resonates decades after it was written. The emotional intensity between Tudor and Mica feels raw and real.",
+    "created_at": "2025-05-25T19:46:34.559Z",
+    "like_count": 1,
+    "dislike_count": 1
+  }
+},
+{
+  "model": "library.review",
+  "pk": 8,
+  "fields": {
+    "user": 3,
+    "book": 7,
+    "rating": 3,
+    "review_text": "This book was a rite of passage in Romanian schools. It's melodramatic at times, but that’s part of its charm. A classic in every sense.",
+    "created_at": "2025-05-25T19:47:00.182Z",
+    "like_count": 2,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 10,
+  "fields": {
+    "user": 4,
+    "book": 1,
+    "rating": 3,
+    "review_text": "It is a little bit overrated!",
+    "created_at": "2025-05-25T22:23:47.072Z",
+    "like_count": 1,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 13,
+  "fields": {
+    "user": 4,
+    "book": 2,
+    "rating": 3,
+    "review_text": "nope",
+    "created_at": "2025-05-25T22:26:10.975Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 16,
+  "fields": {
+    "user": 4,
+    "book": 2,
+    "rating": 2,
+    "review_text": "nope",
+    "created_at": "2025-05-25T22:26:32.733Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 18,
+  "fields": {
+    "user": 4,
+    "book": 3,
+    "rating": 2,
+    "review_text": "lies",
+    "created_at": "2025-05-25T22:29:18.952Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 19,
+  "fields": {
+    "user": 4,
+    "book": 3,
+    "rating": 2,
+    "review_text": "no",
+    "created_at": "2025-05-25T22:31:34.549Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 20,
+  "fields": {
+    "user": 4,
+    "book": 6,
+    "rating": 5,
+    "review_text": "why",
+    "created_at": "2025-05-25T22:31:53.259Z",
+    "like_count": 1,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 21,
+  "fields": {
+    "user": 4,
+    "book": 1,
+    "rating": 5,
+    "review_text": "yeah",
+    "created_at": "2025-05-25T22:37:44.908Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.review",
+  "pk": 22,
+  "fields": {
+    "user": 3,
+    "book": 2,
+    "rating": 5,
+    "review_text": "good",
+    "created_at": "2025-05-25T23:10:31.918Z",
+    "like_count": 0,
+    "dislike_count": 0
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 1,
+  "fields": {
+    "user": 3,
+    "review": 8,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "review": 7,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "review": 6,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 4,
+  "fields": {
+    "user": 3,
+    "review": 5,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "review": 4,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "review": 3,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 7,
+  "fields": {
+    "user": 3,
+    "review": 2,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 8,
+  "fields": {
+    "user": 3,
+    "review": 1,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 9,
+  "fields": {
+    "user": 4,
+    "review": 8,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 10,
+  "fields": {
+    "user": 4,
+    "review": 4,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 11,
+  "fields": {
+    "user": 4,
+    "review": 2,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 12,
+  "fields": {
+    "user": 4,
+    "review": 7,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 13,
+  "fields": {
+    "user": 4,
+    "review": 5,
+    "vote_type": "dislike"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 14,
+  "fields": {
+    "user": 4,
+    "review": 10,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.reviewvote",
+  "pk": 15,
+  "fields": {
+    "user": 3,
+    "review": 20,
+    "vote_type": "like"
+  }
+},
+{
+  "model": "library.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "profile_pic": "",
+    "bio": "",
+    "favorites": [],
+    "next_reading": []
+  }
+},
+{
+  "model": "library.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "profile_pic": "",
+    "bio": "",
+    "favorites": [],
+    "next_reading": []
+  }
+},
+{
+  "model": "library.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "profile_pic": "",
+    "bio": "",
+    "favorites": [
+      3,
+      5,
+      7
+    ],
+    "next_reading": [
+      1,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "library.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "profile_pic": "",
+    "bio": "",
+    "favorites": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "next_reading": [
+      2,
+      4,
+      5,
+      7
+    ]
+  }
+}
+]
