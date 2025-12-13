@@ -1,0 +1,18 @@
+{% for review in reviews %}
+<div class="review-card{% if user.is_authenticated and review.user_id == user.id %} my-review-card{% endif %}" data-review-id="{{ review.id }}">
+    <div class="review-header">
+        <span class="review-user">{{ review.user.username }}</span>
+        <span class="review-rating">⭐ {{ review.rating }}</span>
+        <span class="review-date">{{ review.created_at|date:'M d, Y' }}</span>
+        {% if user.is_authenticated and review.user_id == user.id %}
+        <span class="review-actions-menu" style="display:none;position:absolute;right:18px;top:18px;z-index:10;background:#23232b;border-radius:8px;box-shadow:0 2px 8px #000;padding:8px 12px;">
+            <button class="edit-review-btn" data-review-id="{{ review.id }}" style="font-size:0.95em;padding:4px 10px;margin-right:6px;">Edit</button>
+            <button class="delete-review-btn" data-review-id="{{ review.id }}" style="font-size:0.95em;padding:4px 10px;background:#d32f2f;color:#fff;">Delete</button>
+        </span>
+        {% endif %}
+    </div>
+    <p class="review-text">{{ review.review_text }}</p>
+</div>
+{% empty %}
+<p>No reviews yet.</p>
+{% endfor %} 

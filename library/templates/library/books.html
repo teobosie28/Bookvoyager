@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="books-container">
+    <h2>Books</h2>
+    <form method="get" class="book-search-form" onsubmit="return false;">
+        <input type="text" name="q" id="book-search-input" placeholder="Search books or authors..." value="{{ query }}" class="book-search-input" autocomplete="off" />
+    </form>
+    <div id="book-list-container">
+        {% include 'library/_book_list.html' with books=books %}
+    </div>
+</div>
+<script>
+const searchInput = document.getElementById('book-search-input');
+const bookListContainer = document.getElementById('book-list-container');
+let lastQuery = searchInput.value;
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value;
+    if (query === lastQuery) return;
+    lastQuery = query;
+    fetch(`/books/ajax/?q=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(data => {
+            bookListContainer.innerHTML = data.html;
+        });
+});
+</script>
+{% endblock %} 

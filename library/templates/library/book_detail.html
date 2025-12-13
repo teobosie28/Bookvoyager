@@ -1,0 +1,235 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="book-detail-layout">
+    <!-- Left: Author info and bookshop links -->
+    <div class="book-detail-left">
+        <div class="author-info">
+            <h3>Author</h3>
+            <p><b><a href="{% url 'author_detail' author.id %}" class="author-link">{{ author.name }}</a></b></p>
+            <p>{{ author.bio }}</p>
+        </div>
+        <div class="bookshop-links">
+            <h4>Find this book:</h4>
+            <ul>
+                {% for shop in bookshop_links %}
+                <li><a href="{{ shop.url }}" target="_blank">{{ shop.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- Center: Book cover -->
+    <div class="book-detail-center">
+        <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="book-detail-cover-large" />
+        <h2 style="display:inline-block;">{{ book.title }}</h2>
+        {% if user.is_authenticated %}
+        <button class="favorite-btn-detail{% if book in user.profile.favorites.all %} favorited{% endif %}" data-book-id="{{ book.id }}" aria-label="Favorite" style="background:none;border:none;cursor:pointer;font-size:2em;vertical-align:middle;">
+            <span class="heart-icon">{% if book in user.profile.favorites.all %}&#10084;{% else %}&#9825;{% endif %}</span>
+        </button>
+        <button class="next-reading-btn-detail{% if book in user.profile.next_reading.all %} next-reading-added{% endif %}" data-book-id="{{ book.id }}" aria-label="Next read" title="Next read" style="background:none;border:none;cursor:pointer;font-size:2em;vertical-align:middle;margin-left:8px;">
+            {% if book in user.profile.next_reading.all %}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffd54f" stroke="#ffd54f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            {% else %}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffd54f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            {% endif %}
+        </button>
+        {% endif %}
+        <p class="rating">⭐ {{ book.average_rating|floatformat:1 }}</p>
+        <p class="description">{{ book.description }}</p>
+    </div>
+    <!-- Right: Reviews -->
+    <div class="book-detail-right">
+        <div class="reviews-header">
+            <h3>Reviews</h3>
+            <form method="get" class="review-filter-form">
+                <label for="sort">Sort by:</label>
+                <select name="sort" id="sort" onchange="this.form.submit()">
+                    <option value="date_desc" {% if sort == 'date_desc' %}selected{% endif %}>Newest</option>
+                    <option value="date_asc" {% if sort == 'date_asc' %}selected{% endif %}>Oldest</option>
+                    <option value="grade_desc" {% if sort == 'grade_desc' %}selected{% endif %}>Highest Grade</option>
+                    <option value="grade_asc" {% if sort == 'grade_asc' %}selected{% endif %}>Lowest Grade</option>
+                </select>
+            </form>
+        </div>
+        <div class="review-list">
+            {% include 'library/review_list_partial.html' with reviews=reviews user=user %}
+        </div>
+        {% if user.is_authenticated %}
+        <button id="open-review-modal-btn" class="auth-btn" style="margin-top:18px;">Write a Review</button>
+        <div id="review-modal" class="modal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;">
+            <div class="modal-content" style="background:#23232b;padding:32px 28px;border-radius:16px;max-width:400px;width:90vw;box-shadow:0 4px 32px #000;position:relative;">
+                <button id="close-review-modal-btn" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5em;color:#ffe082;cursor:pointer;">&times;</button>
+                <h3 style="color:#ffe082;">Write a Review</h3>
+                <form id="review-form" method="post" action="">
+                    {% csrf_token %}
+                    {{ review_form.as_p }}
+                    <button type="submit" class="auth-btn" style="margin-top:10px;">Submit Review</button>
+                </form>
+                <div id="review-success-msg" style="display:none;color:#00ffd0;margin-top:10px;font-weight:bold;">Review submitted!</div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+const isAuthenticated = "{{ user.is_authenticated|yesno:'true,false' }}";
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.querySelector('.favorite-btn-detail');
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bookId = btn.getAttribute('data-book-id');
+            const isFavorited = btn.classList.contains('favorited');
+            fetch(`/books/${isFavorited ? 'remove_favorite' : 'add_favorite'}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    btn.classList.toggle('favorited', data.favorite);
+                    btn.querySelector('.heart-icon').innerHTML = data.favorite ? '\u2764' : '\u2661';
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            });
+        });
+    }
+    var nextBtn = document.querySelector('.next-reading-btn-detail');
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bookId = nextBtn.getAttribute('data-book-id');
+            const isAdded = nextBtn.classList.contains('next-reading-added');
+            fetch(`/books/${isAdded ? 'remove_next_reading' : 'add_next_reading'}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    nextBtn.classList.toggle('next-reading-added', data.next_reading);
+                    nextBtn.innerHTML = data.next_reading ? `<svg width='22' height='22' viewBox='0 0 24 24' fill='#ffd54f' stroke='#ffd54f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>` : `<svg width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='#ffd54f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>`;
+                    nextBtn.setAttribute('title', 'Next read');
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            });
+        });
+    }
+    // Modal logic
+    let openModalBtn = document.getElementById('open-review-modal-btn');
+    let reviewModal = document.getElementById('review-modal');
+    let closeModalBtn = document.getElementById('close-review-modal-btn');
+    let reviewForm = document.getElementById('review-form');
+    let reviewSuccessMsg = document.getElementById('review-success-msg');
+    let reviewList = document.querySelector('.review-list');
+
+    // Edit/Delete review logic
+    function attachReviewActionListeners() {
+        // Hide all menus
+        function hideAllMenus() {
+            document.querySelectorAll('.review-actions-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        }
+        document.querySelectorAll('.my-review-card').forEach(function(card) {
+            card.onclick = function(e) {
+                // Only open menu if not clicking a button
+                if (e.target.classList.contains('edit-review-btn') || e.target.classList.contains('delete-review-btn')) return;
+                hideAllMenus();
+                const menu = card.querySelector('.review-actions-menu');
+                if (menu) menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            };
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.my-review-card')) hideAllMenus();
+        });
+        document.querySelectorAll('.edit-review-btn').forEach(function(btn) {
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                const reviewId = btn.getAttribute('data-review-id');
+                const reviewCard = btn.closest('.review-card');
+                const rating = reviewCard.querySelector('.review-rating').textContent.replace(/[^0-9]/g, '');
+                const text = reviewCard.querySelector('.review-text').textContent;
+                // Open modal and pre-fill form
+                reviewModal.style.display = 'flex';
+                reviewForm.rating.value = rating;
+                reviewForm.review_text.value = text;
+                reviewForm.setAttribute('data-edit-id', reviewId);
+                hideAllMenus();
+            };
+        });
+        document.querySelectorAll('.delete-review-btn').forEach(function(btn) {
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                if (!confirm('Delete this review?')) return;
+                const reviewId = btn.getAttribute('data-review-id');
+                fetch(`/reviews/delete/${reviewId}/`, {
+                    method: 'POST',
+                    headers: { 'X-CSRFToken': '{{ csrf_token }}', 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        reviewList.innerHTML = data.html;
+                        attachReviewActionListeners();
+                    } else if (data.error) {
+                        alert(data.error);
+                    }
+                });
+                hideAllMenus();
+            };
+        });
+    }
+
+    if (isAuthenticated === 'true') {
+        if (openModalBtn && reviewModal && closeModalBtn) {
+            openModalBtn.onclick = function() { reviewModal.style.display = 'flex'; };
+            closeModalBtn.onclick = function() { reviewModal.style.display = 'none'; };
+            reviewModal.onclick = function(e) { if (e.target === reviewModal) reviewModal.style.display = 'none'; };
+        }
+        attachReviewActionListeners();
+        if (reviewForm) {
+            reviewForm.onsubmit = function(e) {
+                e.preventDefault();
+                const formData = new FormData(reviewForm);
+                const editId = reviewForm.getAttribute('data-edit-id');
+                let url = '';
+                if (editId) {
+                    url = `/reviews/edit/${editId}/`;
+                    reviewForm.removeAttribute('data-edit-id');
+                }
+                reviewModal.style.display = 'none';
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-CSRFToken': '{{ csrf_token }}' },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        reviewList.innerHTML = data.html;
+                        reviewSuccessMsg.style.display = 'block';
+                        setTimeout(() => { reviewSuccessMsg.style.display = 'none'; }, 1200);
+                        reviewForm.reset();
+                        attachReviewActionListeners();
+                    } else if (data.error) {
+                        alert(data.error);
+                    }
+                });
+            };
+        }
+    }
+});
+</script>
+{% endblock %} 

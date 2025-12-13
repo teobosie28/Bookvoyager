@@ -1,0 +1,28 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="authors-container">
+    <div class="authors-shadow-overlay"></div>
+    <h2>Authors</h2>
+    <form method="get" class="book-search-form" onsubmit="return false;">
+        <input type="text" name="q" id="author-search-input" placeholder="Search authors..." value="{{ query|default:'' }}" class="book-search-input" autocomplete="off" />
+    </form>
+    <div id="author-list-container">
+        {% include 'library/_author_list.html' with authors=authors %}
+    </div>
+</div>
+<script>
+const authorSearchInput = document.getElementById('author-search-input');
+const authorListContainer = document.getElementById('author-list-container');
+let lastAuthorQuery = authorSearchInput.value;
+authorSearchInput.addEventListener('input', function() {
+    const query = authorSearchInput.value;
+    if (query === lastAuthorQuery) return;
+    lastAuthorQuery = query;
+    fetch(`/authors/ajax/?q=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(data => {
+            authorListContainer.innerHTML = data.html;
+        });
+});
+</script>
+{% endblock %} 

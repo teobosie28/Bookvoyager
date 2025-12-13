@@ -1,0 +1,102 @@
+<div class="book-list">
+    {% for book in books %}
+    <div class="book-card-wrapper" style="position:relative;display:inline-block;">
+        <button class="favorite-btn{% if user.is_authenticated and book in user.profile.favorites.all %} favorited{% endif %}" data-book-id="{{ book.id }}" aria-label="Favorite">
+            <span class="heart-icon">{% if user.is_authenticated and book in user.profile.favorites.all %}&#10084;{% else %}&#9825;{% endif %}</span>
+        </button>
+        <button class="next-reading-btn{% if user.is_authenticated and book in user.profile.next_reading.all %} next-reading-added{% endif %}" data-book-id="{{ book.id }}" aria-label="Next read" title="Next read" style="margin-left:6px;">
+            {% if user.is_authenticated and book in user.profile.next_reading.all %}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffd54f" stroke="#ffd54f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            {% else %}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffd54f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            {% endif %}
+        </button>
+        <a href="{% url 'book_detail' book.id %}" class="book-card">
+            <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="book-cover" />
+            <div class="book-info">
+                <h3>{{ book.title }}</h3>
+                <p class="author">by {{ book.author.name }}</p>
+                <p class="rating">⭐ {{ book.average_rating|floatformat:1 }}</p>
+                <details>
+                    <summary class="desc-summary" data-book-url="{% url 'book_detail' book.id %}">Description</summary>
+                    <p>{{ book.description }}</p>
+                </details>
+            </div>
+        </a>
+    </div>
+    {% empty %}
+    <p>No books found.</p>
+    {% endfor %}
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.desc-summary').forEach(function(summary) {
+        summary.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = summary.getAttribute('data-book-url');
+        });
+        summary.addEventListener('mouseover', function() {
+            const tooltip = summary.querySelector('.desc-tooltip');
+            if (tooltip) tooltip.style.display = 'inline-block';
+        });
+        summary.addEventListener('mouseout', function() {
+            const tooltip = summary.querySelector('.desc-tooltip');
+            if (tooltip) tooltip.style.display = 'none';
+        });
+    });
+    // Favorite heart button AJAX
+    document.querySelectorAll('.favorite-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bookId = btn.getAttribute('data-book-id');
+            const isFavorited = btn.classList.contains('favorited');
+            fetch(`/books/${isFavorited ? 'remove_favorite' : 'add_favorite'}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    btn.classList.toggle('favorited', data.favorite);
+                    btn.querySelector('.heart-icon').innerHTML = data.favorite ? '\u2764' : '\u2661';
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            });
+        });
+    });
+    // Next reading bookmark button AJAX
+    document.querySelectorAll('.next-reading-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bookId = btn.getAttribute('data-book-id');
+            const isAdded = btn.classList.contains('next-reading-added');
+            fetch(`/books/${isAdded ? 'remove_next_reading' : 'add_next_reading'}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    btn.classList.toggle('next-reading-added', data.next_reading);
+                    // Swap SVGs
+                    btn.innerHTML = data.next_reading ? `<svg width='22' height='22' viewBox='0 0 24 24' fill='#ffd54f' stroke='#ffd54f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>` : `<svg width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='#ffd54f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>`;
+                    btn.setAttribute('title', 'Next read');
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            });
+        });
+    });
+});
+</script> 

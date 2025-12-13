@@ -1,0 +1,16 @@
+{% load custom_filters %}
+{% for review in reviews %}
+<div class="review-card" data-review-id="{{ review.id }}">
+    <div class="review-header">
+        <span class="review-user">{{ review.user.username }}</span>
+        <span class="review-rating">⭐ {{ review.rating }}</span>
+        <span class="review-book">on <b>{{ review.book.title }}</b></span>
+    </div>
+    <p class="review-text">{{ review.review_text }}</p>
+    <span class="review-date">{{ review.created_at|date:'M d, Y' }}</span>
+    <div class="review-likes">
+        <button class="like-btn{% if user_votes|dict_get:review.id == 'like' %} voted{% endif %}" type="button">👍 <span class="like-count">{{ review.like_count }}</span></button>
+        <button class="dislike-btn{% if user_votes|dict_get:review.id == 'dislike' %} voted{% endif %}" type="button">👎 <span class="dislike-count">{{ review.dislike_count }}</span></button>
+    </div>
+</div>
+{% endfor %} 

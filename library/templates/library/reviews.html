@@ -1,0 +1,95 @@
+{% extends 'library/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+<div class="reviews-container">
+    <h2>Book Reviews</h2>
+    <form method="get" class="book-search-form" onsubmit="return false;">
+        <input type="text" name="q" id="review-search-input" placeholder="Search by book or author..." value="{{ query|default:'' }}" class="book-search-input" autocomplete="off" />
+    </form>
+    <div class="review-sort-filter">
+        <select id="review-sort-select">
+            <option value="latest"{% if request.GET.sort == 'latest' or not request.GET.sort %} selected{% endif %}>Latest</option>
+            <option value="popular"{% if request.GET.sort == 'popular' %} selected{% endif %}>Popular</option>
+        </select>
+    </div>
+    <div class="review-list" id="review-list-container">
+        {% for review in reviews %}
+        <div class="review-card" data-review-id="{{ review.id }}">
+            <div class="review-header">
+                <span class="review-user">{{ review.user.username }}</span>
+                <span class="review-rating">⭐ {{ review.rating }}</span>
+                <span class="review-book">on <b>{{ review.book.title }}</b></span>
+            </div>
+            <p class="review-text">{{ review.review_text }}</p>
+            <span class="review-date">{{ review.created_at|date:'M d, Y' }}</span>
+            <div class="review-likes">
+                <button class="like-btn{% if user_votes|dict_get:review.id == 'like' %} voted{% endif %}" type="button">👍 <span class="like-count">{{ review.like_count }}</span></button>
+                <button class="dislike-btn{% if user_votes|dict_get:review.id == 'dislike' %} voted{% endif %}" type="button">👎 <span class="dislike-count">{{ review.dislike_count }}</span></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+const reviewSearchInput = document.getElementById('review-search-input');
+const reviewListContainer = document.getElementById('review-list-container');
+const reviewSortSelect = document.getElementById('review-sort-select');
+let searchTimeout;
+
+function fetchReviews() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        const query = reviewSearchInput.value;
+        const sort = reviewSortSelect.value;
+        const params = new URLSearchParams();
+        if (query) params.append('q', query);
+        if (sort) params.append('sort', sort);
+        fetch(`/reviews/search/?${params.toString()}`, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+            .then(response => response.text())
+            .then(html => {
+                reviewListContainer.innerHTML = html;
+                attachVoteListeners();
+            });
+    }, 300);
+}
+
+reviewSearchInput.addEventListener('input', fetchReviews);
+reviewSortSelect.addEventListener('change', fetchReviews);
+
+function attachVoteListeners() {
+    document.querySelectorAll('.like-btn, .dislike-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (!{{ user.is_authenticated|yesno:'true,false' }}) {
+                alert('You must be logged in to vote.');
+                return;
+            }
+            const card = btn.closest('.review-card');
+            const reviewId = card.getAttribute('data-review-id');
+            const isLike = btn.classList.contains('like-btn');
+            fetch(`/reviews/${isLike ? 'like' : 'dislike'}/${reviewId}/`, {
+                method: 'POST', 
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                card.querySelector('.like-count').textContent = data.like_count;
+                card.querySelector('.dislike-count').textContent = data.dislike_count;
+                card.querySelector('.like-btn').classList.toggle('voted', data.user_vote === 'like');
+                card.querySelector('.dislike-btn').classList.toggle('voted', data.user_vote === 'dislike');
+            });
+        });
+    });
+}
+
+// Initial attachment of vote listeners
+attachVoteListeners();
+</script>
+{% endblock %} 

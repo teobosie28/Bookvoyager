@@ -1,0 +1,25 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="author-detail-centered-container">
+    <div class="author-detail-photo-wrapper">
+        <img src="{{ author.photo_url }}" alt="{{ author.name }} photo" class="author-detail-photo-large" />
+    </div>
+    <div class="author-detail-info-centered">
+        <h2>{{ author.name }}</h2>
+        <div class="author-desc-shadow">
+            <p>{{ author.bio }}</p>
+        </div>
+        <h3>Books by {{ author.name }}</h3>
+        <div class="author-books-floating-list">
+            {% for book in books %}
+            <a href="{% url 'book_detail' book.id %}" class="author-book-float-link">
+                <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="author-book-float-cover" />
+                <span class="author-book-float-title">{{ book.title }}</span>
+            </a>
+            {% empty %}
+            <span>No books found for this author.</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

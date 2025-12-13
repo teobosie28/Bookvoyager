@@ -1,0 +1,28 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="hero-container">
+    <div class="books-ahead-img-wrapper">
+        <img src="/static/library/books_ahead.png" alt="Books Ahead Slow Down" class="books-ahead-img" />
+    </div>
+    <div class="hero-text">
+        <h1><b>Bookvoyager</b></h1>
+        <p class="pronounce">/book-voy-uh-jer/ noun</p>
+        <div class="welcome-message">
+            Welcome to Bookvoyager! <a href="/account/" class="welcome-account-link">Go to your account</a>
+        </div>
+        <p class="tagline">A person who travels through different worlds and times by reading books.</p>
+    </div>
+    {% if last_viewed_books %}
+    <div class="floating-sidebar">
+        <h4>Last Viewed</h4>
+        <div class="floating-books-list">
+            {% for book in last_viewed_books %}
+            <a href="{% url 'book_detail' book.id %}" class="floating-book-cover-link">
+                <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="floating-book-cover" />
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

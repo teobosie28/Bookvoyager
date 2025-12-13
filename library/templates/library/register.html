@@ -1,0 +1,30 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="auth-container">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <ul class="form-errors">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        <small>25 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        <button type="submit" class="auth-btn">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+</div>
+{% endblock %} 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookvoyager</title>
+    <link rel="stylesheet" type="text/css" href="/static/library/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="site-title">Bookvoyager</a>
+        <div class="nav-links-right">
+            <a href="/books/" class="nav-link">Books</a>
+            <a href="/authors/" class="nav-link">Authors</a>
+            <a href="/reviews/" class="nav-link">Reviews</a>
+            <a href="/news/" class="nav-link">News</a>
+            <a href="/account/" class="nav-link account-link">Account</a>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html> 
